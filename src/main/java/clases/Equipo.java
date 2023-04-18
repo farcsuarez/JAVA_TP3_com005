@@ -15,6 +15,7 @@ package clases;
  * @author 
  */
 
+
 public class Equipo {
     private int idEquipo;
     private String Nombre;
