@@ -16,6 +16,24 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * SE USO PARA REALIZAR LOS RECUADROS UN SISTEMA LINUX CON
+ * UN IDE NETBEANS QUE EN LAS OPCIONES DE BARRA DE MENUES:
+ *
+ * TOOLS ==> OPTIONS ==> FONTS & COLORS
+ *
+ * SI SE MIRA EN LA PARTE DE "CATEGORY"
+ *
+ * PARA LA OPCION DE CHARACTER  EL FONT QUE SE UTILIZO
+ *
+ * FUE "Inherited":(HEREDADO) 
+ *
+ * FONT Monospaced.
+ * FONT STYLE Plain.
+ * SIZE 15. 
+ *
+ * SELECCIONAR ESE FONT POR SI SURGE UN PROBLEMA
+ * EN UN SISTEMA "WINDOWS" VER SI USANDO ESTA OPCION SE RESUELVE.
+ * 
  * @author Grupo I Miembros: NESTOR DANIEL AVACA NORBERTO DIAZ RICARDO LUIS
  * MARTINEZ FABIAN SUAREZ BERNARDO VELAZQUEZ
  * @author
@@ -157,12 +175,20 @@ public class ListaEquipos {
 
     public void listarEquipos() {
         int t = equipos.size();
+        System.out.print("┌────────────────────────────────────────────────────────────────────────────────────────┐\n");
+        System.out.print("│   -------------------    LOS EQUIPOS PARTICIPANTES SON:   -------------------------    │█\n");
+        System.out.print("├────────────────┬─────────┬──────────────────────────────┬───────────────┬──────────────┤█\n");
+       
+        
         for (int x = 0; x < t; x++) {
-            System.out.print("NUMEROS:   " + equipos.get(x).getIdEquipo() + ""
-                    + "\tNOMBRE: \s" + equipos.get(x).getNombre() + cl(28, equipos.get(x).getNombre())
-                    + "DESCRIPCION:  " + equipos.get(x).getDescripcion() + "\n");//   lista += "\n" + equipo;
+            System.out.print("│NUMEROS:  " + equipos.get(x).getIdEquipo() + ""
+                    + "\t │NOMBRE:  │\s" + equipos.get(x).getNombre() + cl(28, equipos.get(x).getNombre())
+                    + " │DESCRIPCION:   │" +
+                    equipos.get(x).getDescripcion()+cl(13, equipos.get(x).getDescripcion() )+
+                    " │█"+"\n");//   lista += "\n" + equipo;
         }
-
+        System.out.print("└────────────────────────────────────────────────────────────────────────────────────────┘█\n");
+        System.out.print(" ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
     }
 
     private String cl(int e, String l) {

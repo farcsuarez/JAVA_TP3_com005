@@ -16,6 +16,24 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * SE USO PARA REALIZAR LOS RECUADROS UN SISTEMA LINUX CON
+ * UN IDE NETBEANS QUE EN LAS OPCIONES DE BARRA DE MENUES:
+ *
+ * TOOLS ==> OPTIONS ==> FONTS & COLORS
+ *
+ * SI SE MIRA EN LA PARTE DE "CATEGORY"
+ *
+ * PARA LA OPCION DE CHARACTER  EL FONT QUE SE UTILIZO
+ *
+ * FUE "Inherited":(HEREDADO) 
+ *
+ * FONT Monospaced.
+ * FONT STYLE Plain.
+ * SIZE 15. 
+ *
+ * SELECCIONAR ESE FONT POR SI SURGE UN PROBLEMA
+ * EN UN SISTEMA "WINDOWS" VER SI USANDO ESTA OPCION SE RESUELVE.
+ * 
  * @author Grupo I Miembros: NESTOR DANIEL AVACA NORBERTO DIAZ RICARDO LUIS
  * MARTINEZ FABIAN SUAREZ BERNARDO VELAZQUEZ
  * @author
@@ -176,40 +194,75 @@ public class ListaPartidos {
 ////////////////////////////////////////////////////
 
     public void listarSinGoles() {
+        System.out.println("");
+        System.out.println("----------------------------------------------------------------------------------------------------");
+        System.out.println("");
+//        System.out.println("---------------------------------------------------------------------------");
+        System.out.println("");
+        System.out.println("╔═════════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                    LA LISTA DE PARTIDOS A JUGAR SON:                    ║█");
+        System.out.println("║                                                                         ║█");
+        System.out.println("╠════╦══════════════════════════════╦════════╦════════════════════════════╣█");
+        System.out.println("║ N° ║        EQUIPO1 (LOCAL)       ║        ║    EQUIPO2 (VISITANTE)     ║█");
+        System.out.println("╠════╬══════════════════════════════╬════════╬════════════════════════════╣█");
+        
 
-        System.out.println("---------------------------------------------------------------------------");
-        System.out.println("| N° |        EQUIPO1 (LOCAL)       |========|     EQUIPO2 (VISITANTE)    |         ");
-        System.out.println("---------------------------------------------------------------------------");
+//        System.out.println("---------------------------------------------------------------------------");
+//        System.out.println("| N° |        EQUIPO1 (LOCAL)       |========|     EQUIPO2 (VISITANTE)    |         ");
+//        System.out.println("---------------------------------------------------------------------------");
         int t = partidos.size();
         for (int x = 0; x < t; x++) {
-            System.out.print("| " + partidos.get(x).getIdPartido() + "  |"
+            System.out.print("║ " + partidos.get(x).getIdPartido() + "  ║"
                     + "  " + partidos.get(x).getEquipo1().getNombre() + cl(28, partidos.get(x).getEquipo1().getNombre())
-                    + "| " + "  VS  " + " |"
-                    + cl(28, partidos.get(x).getEquipo2().getNombre()) + partidos.get(x).getEquipo2().getNombre() + "|" + "\n");//
+                    + "║ " + "  VS  " + " ║"
+                    + cl(28, partidos.get(x).getEquipo2().getNombre()) + partidos.get(x).getEquipo2().getNombre() + "║█" + "\n");//
 
         }
-        System.out.println("===========================================================================");
+        System.out.println("╚════╩══════════════════════════════╩════════╩════════════════════════════╝█");
+        System.out.println(" ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"); 
+        System.out.println("");
+        System.out.println("");
+//        System.out.println("===========================================================================");
     }
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////    
     public void listarConGoles() {
 
-        System.out.println("---------------------------------------------------------------------------");
-        System.out.println("| N° |        EQUIPO1_LOCAL         | GOLES |       EQUIPO2_VISITANTE     |         ");
-        System.out.println("---------------------------------------------------------------------------");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("╔═════════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║               LOS RESULTADOS DE LOS PARTIDOS JUGADOS SON:               ║█");
+        System.out.println("║                                                                         ║█");
+        System.out.println("╠════╦══════════════════════════════╦═══════╦═════════════════════════════╣█");
+        System.out.println("║ N° ║        EQUIPO1 (LOCAL)       ║ GOLES ║     EQUIPO2 (VISITANTE)     ║█");
+        System.out.println("╠════╬══════════════════════════════╬═══╦═══╬═════════════════════════════╣█");
+        
+        
+//        System.out.println("---------------------------------------------------------------------------");
+//        System.out.println("| N° |        EQUIPO1_LOCAL         | GOLES |       EQUIPO2_VISITANTE     |         ");
+//        System.out.println("---------------------------------------------------------------------------");
         int t = partidos.size();
         for (int x = 0; x < t; x++) {
-            System.out.print("| " + partidos.get(x).getIdPartido() + "  |"
+            System.out.print("║ " + partidos.get(x).getIdPartido() + "  ║"
                     + "  " + partidos.get(x).getEquipo1().getNombre() + cl(28, partidos.get(x).getEquipo1().getNombre())
-                    + "| " + partidos.get(x).getGolesEquipo1() + " | "
-                    + partidos.get(x).getGolesEquipo2() + " | "
-                    + cl(28, partidos.get(x).getEquipo2().getNombre()) + partidos.get(x).getEquipo2().getNombre() + "|" + "\n");//
+                    + "║ " + partidos.get(x).getGolesEquipo1() + " ║ "
+                    + partidos.get(x).getGolesEquipo2() + " ║ "
+                    + cl(28, partidos.get(x).getEquipo2().getNombre()) + partidos.get(x).getEquipo2().getNombre() + "║█" + "\n");//
             //     " goles "+partidos.get(x).getGolesEquipo2()+
             //   "\n");//+cl(28,equipos.get(x).getNombre())+
             //    "DESCRIPCION:  "+equipos.get(x).getDescripcion()+"\n" );//   lista += "\n" + equipo;
         }
-        System.out.println("===========================================================================");
+        
+        System.out.println("╚════╩══════════════════════════════╩═══╩═══╩═════════════════════════════╝█");
+        System.out.println(" ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"); 
+        System.out.println("");
+        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+    
     }
 //////////////////////////////////////////////////////
 /////////////////////////////////////////////////////

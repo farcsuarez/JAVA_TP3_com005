@@ -17,6 +17,24 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * SE USO PARA REALIZAR LOS RECUADROS UN SISTEMA LINUX CON
+ * UN IDE NETBEANS QUE EN LAS OPCIONES DE BARRA DE MENUES:
+ *
+ * TOOLS ==> OPTIONS ==> FONTS & COLORS
+ *
+ * SI SE MIRA EN LA PARTE DE "CATEGORY"
+ *
+ * PARA LA OPCION DE CHARACTER  EL FONT QUE SE UTILIZO
+ *
+ * FUE "Inherited":(HEREDADO) 
+ *
+ * FONT Monospaced.
+ * FONT STYLE Plain.
+ * SIZE 15. 
+ *
+ * SELECCIONAR ESE FONT POR SI SURGE UN PROBLEMA
+ * EN UN SISTEMA "WINDOWS" VER SI USANDO ESTA OPCION SE RESUELVE.
+ * 
  * @author Grupo I Miembros: NESTOR DANIEL AVACA NORBERTO DIAZ RICARDO LUIS
  * MARTINEZ FABIAN SUAREZ BERNARDO VELAZQUEZ
  * @author
@@ -93,58 +111,67 @@ public class ListaParticipantes {
         }
     }
 
-    void cargarDeArchivo(ListaPronosticos todos, ListaPartidos partidos) {
-        // para las lineas del archivo csv
-        String line;
-        // para los datos individuales de cada linea
-        String vector[];
-        // para el objeto en memoria
-        Participante participante;
-        int fila = 0;
+//
+//    
+//-------------NO SE USA CON SQLITE -------------------   
+//    
+//    void cargarDeArchivo(ListaPronosticos todos, ListaPartidos partidos) {
+//        // para las lineas del archivo csv
+//        String line;
+//        // para los datos individuales de cada linea
+//        String vector[];
+//        // para el objeto en memoria
+//        Participante participante;
+//        int fila = 0;
+//
+//        Scanner sc = null;
+//        try {
+//            sc = new Scanner(new File(this.getNombreArchivo()));
+//            sc.useDelimiter("\n");   //setea el separador de los datos
+//
+//            while (sc.hasNext()) {
+//                // levanta los datos de cada linea
+//                line = sc.next();
+//                // Descomentar si se quiere mostrar cada línea leída desde el archivo
+//                // System.out.println(datosEquipo);  //muestra los datos levantados 
+//                fila++;
+//                // si es la cabecera la descarto y no se considera para armar el listado
+//                if (fila == 1) {
+//                    continue;
+//                }
+//
+//                //Proceso auxiliar para convertir los string en vector
+//                // guarda en un vector los elementos individuales
+//                vector = line.split(",");
+//
+//                // graba el equipo en memoria
+//                //convertir un string a un entero;
+//                int idParticipante = Integer.parseInt(vector[0]);
+//                String nombre = vector[1];
+//
+//                // crea el objeto en memoria
+//                participante = new Participante(idParticipante, nombre);
+//
+//                // cargo todos los pronósticos como parámetro
+//                participante.cargarPronosticos(todos, partidos);
+//
+//                // llama al metodo add para grabar el equipo en la lista en memoria
+//                this.addParticipante(participante);
+//            }
+//            //closes the scanner
+//        } catch (IOException ex) {
+//            System.out.println("Mensaje: " + ex.getMessage());
+//        } finally {
+//            //cierro scanner
+//            sc.close();
+//        }
+//    }
+//
+//
+//    
+//
 
-        Scanner sc = null;
-        try {
-            sc = new Scanner(new File(this.getNombreArchivo()));
-            sc.useDelimiter("\n");   //setea el separador de los datos
-
-            while (sc.hasNext()) {
-                // levanta los datos de cada linea
-                line = sc.next();
-                // Descomentar si se quiere mostrar cada línea leída desde el archivo
-                // System.out.println(datosEquipo);  //muestra los datos levantados 
-                fila++;
-                // si es la cabecera la descarto y no se considera para armar el listado
-                if (fila == 1) {
-                    continue;
-                }
-
-                //Proceso auxiliar para convertir los string en vector
-                // guarda en un vector los elementos individuales
-                vector = line.split(",");
-
-                // graba el equipo en memoria
-                //convertir un string a un entero;
-                int idParticipante = Integer.parseInt(vector[0]);
-                String nombre = vector[1];
-
-                // crea el objeto en memoria
-                participante = new Participante(idParticipante, nombre);
-
-                // cargo todos los pronósticos como parámetro
-                participante.cargarPronosticos(todos, partidos);
-
-                // llama al metodo add para grabar el equipo en la lista en memoria
-                this.addParticipante(participante);
-            }
-            //closes the scanner
-        } catch (IOException ex) {
-            System.out.println("Mensaje: " + ex.getMessage());
-        } finally {
-            //cierro scanner
-            sc.close();
-        }
-    }
-
+    
     void addParticipante(Participante p) {
         this.participantes.add(p);
     }
@@ -261,19 +288,31 @@ public class ListaParticipantes {
 ////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
     public void listarNombres() {
-
-        System.out.println("---------------------------------------------------------------------------");
-        System.out.println("                  | N°  |         NOMBRE        |");
-        System.out.println("---------------------------------------------------------------------------");
+    
         int t = participantes.size();
+        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("    ╔═══════════════════════════════════════════════════════════╗");
+        System.out.println("    ║            LISTA DE PARTICIPANTES EN ESTE JUEGO:          ║█");
+        System.out.println("    ║                                                           ║█");
+        System.out.println("    ╠═══════════════════════════╦═══════════════════════════════╣█");
+        System.out.println("    ║    N° participante:       ║          NOMBRE:              ║█");
+        System.out.println("    ╠═══════════════════════════╬═══════════════════════════════╣█");
+         
+        
         for (int x = 0; x < t; x++) {
-            System.out.print("                  | " + participantes.get(x).getIdParticipante() + cl(2, Integer.toString(participantes.get(x).getIdParticipante()))
-                    + "  |" + "   " + participantes.get(x).getNombre() + cl(20, participantes.get(x).getNombre())
-                    + "|"
+            System.out.print("    ║            " + participantes.get(x).getIdParticipante() + cl(15, Integer.toString(participantes.get(x).getIdParticipante())) +
+                     "║" + "   " + participantes.get(x).getNombre() + cl(28, participantes.get(x).getNombre())
+                    + "║█"
                     + "\n");//
 
         }
-        System.out.println("===========================================================================");
+        
+        System.out.println("    ╚═══════════════════════════╩═══════════════════════════════╝█");
+        System.out.println("     ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"); 
+        System.out.println("");
+        
     }
 
 /////////////////////////////////////////////////////////

@@ -5,6 +5,24 @@
 package clases;
 
 /**
+ * SE USO PARA REALIZAR LOS RECUADROS UN SISTEMA LINUX CON
+ * UN IDE NETBEANS QUE EN LAS OPCIONES DE BARRA DE MENUES:
+ *
+ * TOOLS ==> OPTIONS ==> FONTS & COLORS
+ *
+ * SI SE MIRA EN LA PARTE DE "CATEGORY"
+ *
+ * PARA LA OPCION DE CHARACTER  EL FONT QUE SE UTILIZO
+ *
+ * FUE "Inherited":(HEREDADO) 
+ *
+ * FONT Monospaced.
+ * FONT STYLE Plain.
+ * SIZE 15. 
+ *
+ * SELECCIONAR ESE FONT POR SI SURGE UN PROBLEMA
+ * EN UN SISTEMA "WINDOWS" VER SI USANDO ESTA OPCION SE RESUELVE.
+ * 
  *@author Grupo I 
  * Miembros:
  * NESTOR DANIEL AVACA
@@ -14,8 +32,6 @@ package clases;
  * BERNARDO VELAZQUEZ
  * @author 
  */
-
-
 public class Equipo {
     private int idEquipo;
     private String Nombre;
